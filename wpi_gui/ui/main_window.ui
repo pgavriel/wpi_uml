@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowDesign</class>
+ <widget class="QMainWindow" name="MainWindowDesign">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ArmGUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>900</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="title">
+     <string>POSITIONS</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>501</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="3">
+       <widget class="QPushButton" name="pushButtonB4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>B4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pushButtonC1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>C1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButtonB1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>B1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="pushButtonC4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>C4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="pushButtonA2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>A2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButtonB3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>B3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButtonB2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>B2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButtonA3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>A3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButtonA1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>A1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="pushButtonA4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>A4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pushButtonC2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>C2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pushButtonC3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>C3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QPushButton" name="pushButtonD4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>D4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButtonD3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>D3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButtonD2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>D2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButtonD1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>D1</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButtonHome">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>30</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>HOME</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDestroy">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>100</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>DESTROY</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonDown">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>170</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>DOWN</string>
+     </property>
+    </widget>
+
+    <widget class="QPushButton" name="pushButtonOpen">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>240</y>
+       <width>70</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>OPEN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonClose">
+     <property name="geometry">
+      <rect>
+       <x>591</x>
+       <y>240</y>
+       <width>70</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>CLOSE</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowPlayer1">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>310</y>
+       <width>45</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowPlayer2">
+     <property name="geometry">
+      <rect>
+       <x>567</x>
+       <y>310</y>
+       <width>45</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowSelf">
+     <property name="geometry">
+      <rect>
+       <x>616</x>
+       <y>310</y>
+       <width>45</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>SELF</string>
+     </property>
+    </widget>
+
+    <widget class="QPushButton" name="pushButtonReset">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>310</y>
+       <width>141</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>RESET</string>
+     </property>
+    </widget>
+
+
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>0</y>
+       <width>150</width>
+       <height>300</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>MESSAGES</string>
+     </property>
+    <widget class="QWidget" name="gridLayoutWidget2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>141</width>
+       <height>270</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushButton_msg1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG1: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButton_msg2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG2: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="pushButton_msg3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG3: </string>
+         </property>
+        </widget>
+       </item>
+
+     </layout>
+   </widget>
+</widget>
+
+   </widget>
+   <widget class="QLabel" name="labelStatus">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>STATUS</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineStatus">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>420</y>
+      <width>611</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>692</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+   <connection>
+     <sender>pushButtonHome</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonDestroy</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonDown</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonShowPlayer1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonShowPlayer2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonShowSelf</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonOpen</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonClose</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+
+   <connection>
+     <sender>pushButton_msg1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+
+   <connection>
+     <sender>pushButtonReset</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonA1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonA2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonA3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonA4</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonB1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonB2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonB3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonB4</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonC1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonC2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonC3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonC4</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonD1</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonD2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonD3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonD4</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>positionClicked()</slot>
+   </connection>
+ </connections>
+</ui>

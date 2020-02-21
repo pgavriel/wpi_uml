@@ -1,0 +1,4 @@
+#!/bin/bash
+NAME=$1
+echo "name="$NAME >> joints.txt
+rostopic echo -n 1 /joint_states/position >> joints.txt

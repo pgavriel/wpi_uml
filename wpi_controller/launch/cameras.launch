@@ -1,0 +1,12 @@
+<launch>
+      <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+  	     <arg name="camera" value="camera_desk" />
+  	     <arg name="serial_no" value="848312070746" />
+      </include>
+      <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+  	     <arg name="camera" value="camera_arm" />
+  	     <arg name="serial_no" value="843112074121" />
+      </include>
+
+      <node name="rqt_cameraview" pkg="rqt_gui" type="rqt_gui" required="true" /> 
+</launch>
