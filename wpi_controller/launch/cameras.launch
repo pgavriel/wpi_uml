@@ -8,5 +8,5 @@
   	     <arg name="serial_no" value="843112074121" />
       </include>
 
-      <node name="rqt_cameraview" pkg="rqt_gui" type="rqt_gui" required="true" /> 
+      <node name="rqt_cameraview" pkg="rqt_gui" type="rqt_gui" /> 
 </launch>

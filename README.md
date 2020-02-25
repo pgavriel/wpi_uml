@@ -1,9 +1,10 @@
 # WPI-UML ROS GUI and Controller
 
 ## Overview
-This repository contains two ROS packages, wpi_gui and wpi_controller.
+This repository contains three ROS packages, wpi_gui, wpi_controller, and participant_display.
 * wpi_gui is written using QT with the help of QT's IDE, and publishes coded messages to a ROS topic.
 * wpi_controller implements MoveIt, listens on the published topic, decodes messages sent by the GUI, and decides what to do.
+* participant_display is a window that will show messages that are published on the text_display topic in large readable text. 
 
 The purpose of these packages is to use a GUI to puppet a robotic arm between a number
 of hard-coded positions to play a pattern matching game with a participant. During the

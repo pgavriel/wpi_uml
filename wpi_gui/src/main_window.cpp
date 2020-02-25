@@ -91,6 +91,8 @@ void MainWindow::utilityClicked() {
 		code << "M2-"<<clickCounter;
 	}else if (btnText.startsWith("MSG3")){
 		code << "M3-"<<clickCounter;
+	}else if (btnText.startsWith("MSG4")){
+		code << "M4-"<<clickCounter;
 	}else if (btnText == "RESET"){
 		code << "XR-"<<clickCounter;
 		lastClicked = QString("");

@@ -55,6 +55,8 @@ private:
   ros::Subscriber topic_listener;
 	bool new_msg;
 	std::string message;
+	std::string last_msg;
+	bool drawing;
 };
 
 }  // namespace participant_display

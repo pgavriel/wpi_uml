@@ -59,11 +59,11 @@ bool QNode::init() {
 }
 
 void QNode::displayCallback(const std_msgs::String::ConstPtr& msg){
-	log(Info,std::string("CALLBACK REACHED "));
 	message = msg->data.c_str();
 	new_msg = true;
 	Q_EMIT message_recieved(QString(message.c_str()));
-	log(Info,std::string("Leaving callback new_msg: ")+std::string(new_msg?"TRUE":"FALSE"));
+	log(Info,std::string("TOPIC CALLBACK REACHED: ")+message.c_str());
+	//log(Info,std::string("Leaving callback new_msg: ")+std::string(new_msg?"TRUE":"FALSE"));
 }
 
 void QNode::run() {

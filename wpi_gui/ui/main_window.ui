@@ -465,7 +465,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>MSG1: </string>
+          <string>MSG1: Ask</string>
          </property>
         </widget>
        </item>
@@ -478,7 +478,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>MSG2: </string>
+          <string>MSG2: Agree</string>
          </property>
         </widget>
        </item>
@@ -491,7 +491,20 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>MSG3: </string>
+          <string>MSG3: Disagree</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButton_msg4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG4: Clear</string>
          </property>
         </widget>
        </item>
@@ -603,6 +616,11 @@
      <slot>utilityClicked()</slot>
    </connection><connection>
      <sender>pushButton_msg3</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg4</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
      <slot>utilityClicked()</slot>

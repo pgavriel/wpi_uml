@@ -17,7 +17,7 @@ Written by Peter Gavriel - pgavriel@mail.middlesex.edu
 #include <iostream>
 #include <exception>
 
-//#include <manipulation_class.hpp>
+#include <manipulation_class.hpp>
 
 const int CLOSED = 170;
 
@@ -27,7 +27,7 @@ int position;
 int cmdNum;
 std::string attachedObject = "";
 std::string target = "";
-std::string message = "";
+std_msgs::String message;
 bool load_collisions, load_table;
 
 void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& planning_scene_interface)
@@ -191,7 +191,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
     char row = data[0];
     char col = data[1];
     position = -1;
-    message = "";
+    message.data = "";
 
     if(rows.find(row) != std::string::npos){ //If character Row is contained in valid rows
       target = "";
@@ -228,7 +228,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
                      ROS_INFO("Target after append: %s",target.c_str());
                      position = -1;
                     }
-                    break; //Move down at current position
+                    break;
           case '1': target = "PLAYER1"; position = -1; break; //Show PLAYER1
           case '2': target = "PLAYER2"; position = -1; break; //Show PLAYER2
           case 'S': target = "SELF"; position = -1; break; //Show Self
@@ -239,12 +239,12 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
     }else if(row == 'M'){
       position = -5;
       switch(col){ //Message Command
-        case '1': message = "Test message 1."; break;
-        case '2': message = "Test message 2."; break;
-        case '3': message = "Test message 3."; break;
-        default:  message = "Unknown message."; break;
+        case '1': message.data = "How about this one?"; break;
+        case '2': message.data = "I agree."; break;
+        case '3': message.data = "I disagree."; break;
+        case '4': message.data = ""; break;
+        default:  message.data = "Unknown message."; break;
       }
-      message.append(std::to_string(col-'0'));
     }
     //Output recieved message and parsed information for debugging
     ROS_INFO("GUI MSG: [%s]", data.c_str());
@@ -268,9 +268,10 @@ int main(int argc, char** argv)
   ros::AsyncSpinner spinner(1);
   spinner.start();
 
-  //Manipulation manipulation(nh);
+  Manipulation manipulation(nh);
 
   ros::Subscriber sub = nh.subscribe("arm_command", 1000, commandCallback);
+  message.data = "";
   ros::Publisher msg_sender = nh.advertise<std_msgs::String>("text_display", 1000);
 
   nh.getParam(ros::this_node::getName()+"/LCO",load_collisions);
@@ -280,8 +281,8 @@ int main(int argc, char** argv)
 
   ros::WallDuration(1.0).sleep();
 
-  //manipulation.activate_gripper();
-  //manipulation.gripper_command.publish(manipulation.command);
+  manipulation.activate_gripper();
+  manipulation.gripper_command.publish(manipulation.command);
   ros::Duration(1.5).sleep();
 
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
@@ -301,15 +302,21 @@ int main(int argc, char** argv)
   ROS_INFO("DONE. Listening...");
   while(ros::ok()){
     if(newMsg){ //New message recieved from callback, figure out what to do.
-      if(position>=0) //Must be a board position
+      if(position>=0){ //Must be a board position
+        message.data = "";
+        msg_sender.publish(message);
         gotoPosition(group);//,manipulation);
-      else if (position == -1){ //Must be a utility position (home,dropoff,etc)
+      }else if (position == -1){ //Must be a utility position (home,dropoff,etc)
+        message.data = "";
+        msg_sender.publish(message);
         gotoUtility(group);
       }else if(position == -2){
+        message.data = "";
+        msg_sender.publish(message);
         gotoUtility(group);
       }else if (position == -3){ //Open Gripper
-        //manipulation.gripper_open();
-        //manipulation.gripper_command.publish(manipulation.command);
+        manipulation.gripper_open();
+        manipulation.gripper_command.publish(manipulation.command);
         if(attachedObject != ""){ //If there's a collision object attached, remove it (drop it)
           std::vector<std::string> toRemove;
           toRemove.resize(1);
@@ -320,13 +327,11 @@ int main(int argc, char** argv)
           attachedObject = "";
         }
       }else if (position == -4){ //Close Gripper
-        //manipulation.gripper_set(CLOSED);
-        //manipulation.gripper_command.publish(manipulation.command);
+        manipulation.gripper_set(CLOSED);
+        manipulation.gripper_command.publish(manipulation.command);
       }else if (position == -5){ //Display a message
-        ROS_INFO("ToImplement: Show Message %s",message.c_str());
-        std_msgs::String msg;
-        msg.data = message;
-        msg_sender.publish(msg);
+        ROS_INFO("Show Message: %s",message.data.c_str());
+        msg_sender.publish(message);
       }else
         ROS_INFO("Message unknown. No action taken.");
 
