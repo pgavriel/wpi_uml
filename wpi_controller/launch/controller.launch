@@ -30,7 +30,7 @@
     <!-- Launch GUI to interact with controller -->
     <node name="GUI" pkg="wpi_gui" type="wpi_gui" />
 
-    <node name="display" pkg="participant_display" type="participant_display" output="screen" />
+    <node name="display" pkg="participant_display" type="participant_display" />
 
     <!-- <include if="$(arg cameras)" file="$(find wpi_controller)/launch/cameras.launch" /> -->
 </launch>

@@ -128,7 +128,7 @@ void addTableCollision(moveit::planning_interface::PlanningSceneInterface& plann
   planning_scene_interface.applyCollisionObjects(collision_objects);
 }
 
-void gotoPosition(moveit::planning_interface::MoveGroupInterface& group){//, Manipulation manip){
+void gotoPosition(moveit::planning_interface::MoveGroupInterface& group, Manipulation manip){
   std::string recievedTarget = target;
   if (cmdNum == 1){ //HOVER (Up Position)
     recievedTarget = target+"Up";
@@ -193,7 +193,7 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
     position = -1;
     message.data = "";
 
-    if(rows.find(row) != std::string::npos){ //If character Row is contained in valid rows
+    if(rows.find(row) != std::string::npos){ //POSITION COMMAND ----------------
       target = "";
       position += (int)col-'0';
       switch(row){
@@ -203,13 +203,13 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
         case 'D': target.append("D"); position += rowSize*3; break;
         default: ROS_WARN("Row not recognized");
       }
-      //Position now equals (row#-1*rowsize)+col value-1 (to make it proper array index, 1=0, 2=1, etc.)
+      //Position now equals (row#-1)*rowsize+col#-1 (to make it proper array index, 1=0, 2=1, etc.)
       //Note that position is no longer that useful since implementing the use of setNamedTarget(),
       //    but may still come in handy.
       int pos = (int)col-'0';
       target.append(std::to_string(pos)+"_");
       //In this case, row==X is intended to mean anything other than a board position command
-    }else if(row == 'X'){ //Special command
+    }else if(row == 'X'){ //SPECIAL COMMAND ------------------------------------
         switch(col){
           case 'H': target = "HOME"; position = -1; break; //HOME
           case 'D': target = "DESTROY"; position = -1; break; //DROP OFF AKA DESTROY
@@ -232,13 +232,13 @@ void commandCallback(const std_msgs::String::ConstPtr& msg)
           case '1': target = "PLAYER1"; position = -1; break; //Show PLAYER1
           case '2': target = "PLAYER2"; position = -1; break; //Show PLAYER2
           case 'S': target = "SELF"; position = -1; break; //Show Self
-          case 'O': position = -3; break; //Open Gripper
-          case 'C': position = -4; break; //Close Gripper
+          case 'O': position = -2; break; //Open Gripper
+          case 'C': position = -3; break; //Close Gripper
           case 'R': ROS_INFO("RESET CLICK COUNTER"); return; //RESET (Handled by gui)
         }
-    }else if(row == 'M'){
-      position = -5;
-      switch(col){ //Message Command
+    }else if(row == 'M'){//MESSAGE COMMAND -------------------------------------
+      position = -4;
+      switch(col){
         case '1': message.data = "How about this one?"; break;
         case '2': message.data = "I agree."; break;
         case '3': message.data = "I disagree."; break;
@@ -279,8 +279,6 @@ int main(int argc, char** argv)
   ROS_INFO("Load Collision Objects: %s",load_collisions?"YES":"NO");
   ROS_INFO("Load Table: %s",load_table?"YES":"NO");
 
-  ros::WallDuration(1.0).sleep();
-
   manipulation.activate_gripper();
   manipulation.gripper_command.publish(manipulation.command);
   ros::Duration(1.5).sleep();
@@ -305,16 +303,12 @@ int main(int argc, char** argv)
       if(position>=0){ //Must be a board position
         message.data = "";
         msg_sender.publish(message);
-        gotoPosition(group);//,manipulation);
+        gotoPosition(group,manipulation);
       }else if (position == -1){ //Must be a utility position (home,dropoff,etc)
         message.data = "";
         msg_sender.publish(message);
         gotoUtility(group);
-      }else if(position == -2){
-        message.data = "";
-        msg_sender.publish(message);
-        gotoUtility(group);
-      }else if (position == -3){ //Open Gripper
+      }else if (position == -2){ //Open Gripper
         manipulation.gripper_open();
         manipulation.gripper_command.publish(manipulation.command);
         if(attachedObject != ""){ //If there's a collision object attached, remove it (drop it)
@@ -326,10 +320,10 @@ int main(int argc, char** argv)
           planning_scene_interface.removeCollisionObjects(toRemove);
           attachedObject = "";
         }
-      }else if (position == -4){ //Close Gripper
+      }else if (position == -3){ //Close Gripper
         manipulation.gripper_set(CLOSED);
         manipulation.gripper_command.publish(manipulation.command);
-      }else if (position == -5){ //Display a message
+      }else if (position == -4){ //Display a message
         ROS_INFO("Show Message: %s",message.data.c_str());
         msg_sender.publish(message);
       }else
@@ -338,7 +332,7 @@ int main(int argc, char** argv)
       newMsg = false;
     }
   }
-  std::cout << "\nExiting..." << std::endl;
+  std::cout << "\nExiting...\n";
   ros::WallDuration(0.5).sleep();
   return 0;
 }
@@ -347,6 +341,6 @@ POSITION CODES:
 -4 : Display message
 -3 : Close Gripper
 -2 : Open Gripper
--1 : Utility positions
+-1 : Utility positions (Go directly to target)
 0-15 : Block positions A1-D4
 */
