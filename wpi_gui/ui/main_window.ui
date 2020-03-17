@@ -257,7 +257,7 @@
       <rect>
        <x>520</x>
        <y>30</y>
-       <width>141</width>
+       <width>70</width>
        <height>61</height>
       </rect>
      </property>
@@ -269,6 +269,25 @@
      </property>
      <property name="text">
       <string>HOME</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonNeutral">
+     <property name="geometry">
+      <rect>
+       <x>591</x>
+       <y>30</y>
+       <width>70</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>NEUTRAL</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButtonDestroy">
@@ -354,7 +373,7 @@
        <x>520</x>
        <y>310</y>
        <width>45</width>
-       <height>61</height>
+       <height>30</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -370,6 +389,25 @@
     <widget class="QPushButton" name="pushButtonShowPlayer2">
      <property name="geometry">
       <rect>
+       <x>520</x>
+       <y>340</y>
+       <width>45</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonShowPlayerBoth">
+     <property name="geometry">
+      <rect>
        <x>567</x>
        <y>310</y>
        <width>45</width>
@@ -383,7 +421,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>BOTH</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButtonShowSelf">
@@ -504,7 +542,46 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>MSG4: Clear</string>
+          <string>MSG4: --</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="pushButton_msg5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG5: --</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="pushButton_msg6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG6: --</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="pushButton_msg7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>MSG7: Clear</string>
          </property>
         </widget>
        </item>
@@ -562,6 +639,12 @@
      <slot>utilityClicked()</slot>
    </connection>
    <connection>
+     <sender>pushButtonNeutral</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
      <sender>pushButtonDestroy</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
@@ -581,6 +664,12 @@
    </connection>
    <connection>
      <sender>pushButtonShowPlayer2</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>utilityClicked()</slot>
+   </connection>
+   <connection>
+     <sender>pushButtonShowPlayerBoth</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
      <slot>utilityClicked()</slot>
@@ -608,22 +697,37 @@
      <sender>pushButton_msg1</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
-     <slot>utilityClicked()</slot>
+     <slot>messageClicked()</slot>
    </connection><connection>
      <sender>pushButton_msg2</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
-     <slot>utilityClicked()</slot>
+     <slot>messageClicked()</slot>
    </connection><connection>
      <sender>pushButton_msg3</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
-     <slot>utilityClicked()</slot>
+     <slot>messageClicked()</slot>
    </connection><connection>
      <sender>pushButton_msg4</sender>
      <signal>clicked()</signal>
      <receiver>MainWindowDesign</receiver>
-     <slot>utilityClicked()</slot>
+     <slot>messageClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg5</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>messageClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg6</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>messageClicked()</slot>
+   </connection><connection>
+     <sender>pushButton_msg7</sender>
+     <signal>clicked()</signal>
+     <receiver>MainWindowDesign</receiver>
+     <slot>messageClicked()</slot>
    </connection>
 
    <connection>

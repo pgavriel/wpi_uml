@@ -1,0 +1,16 @@
+    <group_state name="PLAYERS" group="manipulator">
+        <joint name="shoulder_pan_joint" value="0.9094419479370117" />
+        <joint name="shoulder_lift_joint" value="-1.642172475854391" />
+        <joint name="elbow_joint" value="-2.49367618560791" />
+        <joint name="wrist_1_joint" value="0.685187502498291" />
+        <joint name="wrist_2_joint" value="-0.020032231007711232" />
+        <joint name="wrist_3_joint" value="0.31017589569091797" />
+    </group_state>
+    <group_state name="SELF" group="manipulator">
+        <joint name="shoulder_pan_joint" value="0.7548532485961914" />
+        <joint name="shoulder_lift_joint" value="-1.9900275669493617" />
+        <joint name="elbow_joint" value="-1.8539133071899414" />
+        <joint name="wrist_1_joint" value="0.8079473215290527" />
+        <joint name="wrist_2_joint" value="2.2045645713806152" />
+        <joint name="wrist_3_joint" value="0.030472278594970703" />
+    </group_state>

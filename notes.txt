@@ -1,0 +1,18 @@
+WPI NOTES
+
+ToDo:
+X -Reduce margins on text_display
+X -Separate running components to make restarting nodes easier
+X -Make output of the controller node more readable/useful
+X -Have the robot automatically move to neutral position after picking up a cube
+X -Combine PLAYER1 and PLAYER2 to a single position, automate the entire cube showing process to one button
+X -Make position click counter unaffected by sending messages
+X -create functions for the different sequences to make them easier to call
+ - Fix realsense mount and lighting conditions
+ - Order longer usb 3 extendo
+
+COMPONENT SEPARATION
+1. roscore (so that launch files share the same environment)
+2. wpi_controller / arm.launch (ur5e_workstation.launch, rviz, GripperTCP node, camera node)
+3. text_display / text_display.launch (shouldn't need to be reset)
+4. wpi_controller / gui.launch (controller node, and GUI)

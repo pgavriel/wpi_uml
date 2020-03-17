@@ -25,11 +25,11 @@
         <joint name="wrist_3_joint" value="-0.013127628956929982" />
     </group_state>
     <group_state name="NEUTRAL" group="manipulator">
-        <joint name="shoulder_pan_joint" value="0.3004588508605957" /> <!-- 0.3604588508605957 -->
+        <joint name="shoulder_pan_joint" value="0.3604588508605957" />
         <joint name="shoulder_lift_joint" value="-1.420044259434082" />
         <joint name="elbow_joint" value="-2.2847814559936523" />
-        <joint name="wrist_1_joint" value="-0.5342268270305176" /> <!--  -0.4342268270305176   -->
-        <joint name="wrist_2_joint" value="1.0554874420166016" /> <!--  1.2554874420166016   -->
+        <joint name="wrist_1_joint" value="-0.4342268270305176" />
+        <joint name="wrist_2_joint" value="1.2554874420166016" />
         <joint name="wrist_3_joint" value="0.31305932998657227" />
     </group_state>
     <group_state name="PLAYER2" group="manipulator">
@@ -48,30 +48,14 @@
         <joint name="wrist_2_joint" value="1.4163565635681152" />
         <joint name="wrist_3_joint" value="0.31358814239501953" />
     </group_state>
-    <group_state name="PLAYERS" group="manipulator">
-        <joint name="shoulder_pan_joint" value="0.9094419479370117" />
-        <joint name="shoulder_lift_joint" value="-1.642172475854391" />
-        <joint name="elbow_joint" value="-2.49367618560791" />
-        <joint name="wrist_1_joint" value="0.685187502498291" />
-        <joint name="wrist_2_joint" value="-0.020032231007711232" />
-        <joint name="wrist_3_joint" value="0.31017589569091797" />
-    </group_state>
     <group_state name="SELF" group="manipulator">
-        <joint name="shoulder_pan_joint" value="0.7548532485961914" />
-        <joint name="shoulder_lift_joint" value="-1.9900275669493617" />
-        <joint name="elbow_joint" value="-1.8539133071899414" />
-        <joint name="wrist_1_joint" value="0.8079473215290527" />
-        <joint name="wrist_2_joint" value="2.2045645713806152" />
-        <joint name="wrist_3_joint" value="0.030472278594970703" />
-    </group_state>
-    <!-- <group_state name="SELF" group="manipulator">
         <joint name="shoulder_pan_joint" value="0.26809120178222656" />
         <joint name="shoulder_lift_joint" value="-1.865319391290182" />
         <joint name="elbow_joint" value="-1.801976203918457" />
         <joint name="wrist_1_joint" value="0.36732785284008784" />
         <joint name="wrist_2_joint" value="2.6439433097839355" />
         <joint name="wrist_3_joint" value="0.31374406814575195" />
-    </group_state> -->
+    </group_state>
     <group_state name="DESTROY" group="manipulator">
         <joint name="shoulder_pan_joint" value="0.5662307739257812" />
         <joint name="shoulder_lift_joint" value="-1.7401963673033656" />

@@ -34,6 +34,7 @@ public Q_SLOTS:
 	*******************************************/
 	void positionClicked();
 	void utilityClicked();
+	void messageClicked();
 
 private:
 	Ui::MainWindowDesign ui;

@@ -1,20 +1,21 @@
 <launch>
-    <arg name="load_collision_objects" default="true" />
+    <arg name="load_collision_objects" default="false" />
     <arg name="load_table_collision" default="true" />
-    <arg name="velocity_scaling" default="0.15" />
+    <arg name="load_safety" default="true" />
+    <arg name="velocity_scaling" default="0.2" />
     <arg name="plan_time" default="30.0" />
     <arg name="grip_ip" default="10.10.10.42" />
 
-    <arg name="sim" default="true" />
+    <arg name="sim" default="false" />
     <arg name="arm_ip" default="10.10.10.152" />
 
     <arg name="cameras" default="true" />
 
     <!-- Includes Robot Description, State Publishers, and RViz -->
-    <!-- <include file="$(find ur5e_workstation)/launch/ur5e_workstation.launch">
+    <include file="$(find ur5e_workstation)/launch/ur5e_workstation.launch">
       <arg if="$(arg sim)" name="sim" value="$(arg sim)" />
       <arg unless="$(arg sim)" name="ip" value="$(arg arm_ip)" />
-    </include> -->
+    </include>
 
     <!-- Provides communication to the Robotiq 2F Gripper -->
     <node name="gripperTCP" pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperTcpNode.py" args="$(arg grip_ip)" output="screen" />
@@ -23,6 +24,7 @@
     <node name="controller" pkg="wpi_controller" type="wpi_controller" output="screen">
       <param name="LCO" value="$(arg load_collision_objects)" />
       <param name="load_table" value="$(arg load_table_collision)" />
+      <param name="load_safety" value="$(arg load_safety)" />
       <param name="v_scale" value="$(arg velocity_scaling)" />
       <param name="plan_time" value="$(arg plan_time)" />
     </node>
@@ -30,7 +32,10 @@
     <!-- Launch GUI to interact with controller -->
     <node name="GUI" pkg="wpi_gui" type="wpi_gui" />
 
-    <node name="display" pkg="participant_display" type="participant_display" />
 
-    <!-- <include if="$(arg cameras)" file="$(find wpi_controller)/launch/cameras.launch" /> -->
+    <!-- <node name="display" pkg="participant_display" type="participant_display" /> -->
+    <include file="$(find text_display)/launch/text_display.launch" />
+    <!-- <include file="$(find text_display)/launch/text_display2.launch" /> -->
+
+    <include if="$(arg cameras)" file="$(find wpi_controller)/launch/cameras.launch" />
 </launch>

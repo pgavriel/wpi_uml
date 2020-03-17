@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="grip_ip" default="10.10.10.42" />
+
+  <arg name="sim" default="true" />
+  <arg name="arm_ip" default="10.10.10.152" />
+
+  <arg name="cameras" default="true" />
+
+  <!-- Includes Robot Description, State Publishers, and RViz -->
+  <include file="$(find ur5e_workstation)/launch/ur5e_workstation.launch">
+    <arg if="$(arg sim)" name="sim" value="$(arg sim)" />
+    <arg unless="$(arg sim)" name="ip" value="$(arg arm_ip)" />
+  </include>
+
+  <!-- Provides communication to the Robotiq 2F Gripper -->
+  <node name="gripperTCP" pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperTcpNode.py" args="$(arg grip_ip)" output="screen" />
+
+  <include if="$(arg cameras)" file="$(find wpi_controller)/launch/cameras.launch" />
+
+</launch>

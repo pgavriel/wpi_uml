@@ -1,0 +1,20 @@
+<launch>
+    <arg name="load_collision_objects" default="false" />
+    <arg name="load_table_collision" default="true" />
+    <arg name="load_safety" default="true" />
+    <arg name="velocity_scaling" default="0.3" />
+    <arg name="plan_time" default="30.0" />
+
+    <!-- Interperets messages from the GUI and sends commands to robot and gripper -->
+    <node name="controller" pkg="wpi_controller" type="wpi_controller" output="screen">
+      <param name="LCO" value="$(arg load_collision_objects)" />
+      <param name="load_table" value="$(arg load_table_collision)" />
+      <param name="load_safety" value="$(arg load_safety)" />
+      <param name="v_scale" value="$(arg velocity_scaling)" />
+      <param name="plan_time" value="$(arg plan_time)" />
+    </node>
+
+    <!-- Launch GUI to interact with controller -->
+    <node name="GUI" pkg="wpi_gui" type="wpi_gui" />
+
+</launch>

@@ -21,6 +21,8 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
 	lastClicked = QString("");
 	clickCounter = 0;
 
+	QMainWindow::move(0,0);
+
 	QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
 	if ( !qnode.init() ) {
 		showNoMasterMessage();
@@ -71,6 +73,8 @@ void MainWindow::utilityClicked() {
 	}
 	if(btnText == "HOME"){
 		code << "XH-"<<clickCounter;
+	}else if (btnText == "NEUTRAL"){
+		code << "XN-"<<clickCounter;
 	}else if (btnText == "DESTROY"){
 		code << "XD-"<<clickCounter;
 	}else if (btnText == "DOWN"){
@@ -79,20 +83,14 @@ void MainWindow::utilityClicked() {
 		code << "X1-"<<clickCounter;
 	}else if (btnText == "P2"){
 		code << "X2-"<<clickCounter;
+	}else if (btnText == "BOTH"){
+		code << "XB-"<<clickCounter;
 	}else if (btnText == "SELF"){
 		code << "XS-"<<clickCounter;
 	}else if (btnText == "OPEN"){
 		code << "XO-"<<clickCounter;
 	}else if (btnText == "CLOSE"){
 		code << "XC-"<<clickCounter;
-	}else if (btnText.startsWith("MSG1")){
-		code << "M1-"<<clickCounter;
-	}else if (btnText.startsWith("MSG2")){
-		code << "M2-"<<clickCounter;
-	}else if (btnText.startsWith("MSG3")){
-		code << "M3-"<<clickCounter;
-	}else if (btnText.startsWith("MSG4")){
-		code << "M4-"<<clickCounter;
 	}else if (btnText == "RESET"){
 		code << "XR-"<<clickCounter;
 		lastClicked = QString("");
@@ -100,6 +98,36 @@ void MainWindow::utilityClicked() {
 	}else{
 		code << "ERROR";
 	}
+	//Send message to QNode which then publishes on the relevant rostopic
+	qnode.setMessage(code.str());
+	//Set UI textbox to message sent for debugging
+	ui.lineStatus->setText(code.str().c_str());
+}
+
+void MainWindow::messageClicked(){
+	//Save the text of the button that was pressed to a QString.
+	std::stringstream code;
+	QPushButton *clickedbutton = qobject_cast<QPushButton *>(sender());
+  QString btnText = clickedbutton->text();
+	//Construct a message to be sent to QNode
+	if (btnText.startsWith("MSG1")){
+		code << "M1-"<<clickCounter;
+	}else if (btnText.startsWith("MSG2")){
+		code << "M2-"<<clickCounter;
+	}else if (btnText.startsWith("MSG3")){
+		code << "M3-"<<clickCounter;
+	}else if (btnText.startsWith("MSG4")){
+		code << "M4-"<<clickCounter;
+	}else if (btnText.startsWith("MSG5")){
+		code << "M5-"<<clickCounter;
+	}else if (btnText.startsWith("MSG6")){
+		code << "M6-"<<clickCounter;
+	}else if (btnText.startsWith("MSG7")){
+		code << "M7-"<<clickCounter;
+	}else{
+		code << "ERROR";
+	}
+
 	//Send message to QNode which then publishes on the relevant rostopic
 	qnode.setMessage(code.str());
 	//Set UI textbox to message sent for debugging
